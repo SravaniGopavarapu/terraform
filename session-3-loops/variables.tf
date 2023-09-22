@@ -1,7 +1,7 @@
 variable "instance_name" {
   description = "Value of the Name tag for the EC2 instance"
-  type        = string
-  default     = "Instance-from-Terraform"
+  type        = list
+  default     = ["MongoDB","Cart","Web"]
 }
 
 variable "instance_type" {
@@ -29,6 +29,6 @@ variable "sg_name" {
 }
 
 variable "sg_cidr" {
-  type      = list
+  type    = list(any)
   default = ["0.0.0.0/0"]
 }
